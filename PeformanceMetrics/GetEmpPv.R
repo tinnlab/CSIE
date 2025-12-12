@@ -12,7 +12,7 @@ suppressMessages({ suppressWarnings({
 }) })
 
 ResPath <- "./Subtyping_Results"
-datPath <- "./Data/CSIE_Main"
+datPath <- "../Data/CSIE_Main"
 methods <- c("CSIE", "CC", "CIMLR", "SNF", "LRACluster", "IntNMF", "ANF", "NEMO", "MRGCN", "hMKL", "MDICC", "DLSF", "DSIR")
 
 alldts <- list.files(ResPath)

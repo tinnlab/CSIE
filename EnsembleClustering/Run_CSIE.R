@@ -1,8 +1,8 @@
 source("./CSIE_helper.R")
 
-processedDataPath <- "./Data/CSIE_Main/"
-ptoPath <- "./Data/CSIE_Relevant"
-resPath <- "./Subtyping_Results/"
+processedDataPath <- "../Data/CSIE_Main/"
+ptoPath <- "../Data/CSIE_Relevant"
+resPath <- "../PeformanceMetrics/Subtyping_Results/"
 
 datasets <- list.files(processedDataPath)
 datasets <- strsplit(datasets, ".rds") %>% do.call(what = c)

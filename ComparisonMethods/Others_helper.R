@@ -42,7 +42,7 @@ suppressMessages({ suppressWarnings({
 Sys.setenv(CUDA_VISIBLE_DEVICES = sample(0:5, 1))
 source("./R/hMKL/load_hMKL.R")
 source("./R/MDICC/Functions.R")
-LRAClus_prob <- readRDS("./Data/Others_Relevant/LRAClus_meth.rds")
+LRAClus_prob <- readRDS("../Data/Others_Relevant/LRAClus_meth.rds")
 
 standardNormalization <- function(x) {
   x = as.matrix(x)

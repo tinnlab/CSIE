@@ -18,6 +18,11 @@ allFiles <- list.files(file.path(datPath, methods[1]))
 allFiles <- strsplit(allFiles, ".rds")
 allFiles <- lapply(allFiles, function(elm) { elm[1] }) %>% unlist()
 
+### remove variables that are meaningless or important to prognosis
+rmpatterns <- c("barcode", "status_deceased", "whole_exome_sequenced", "whole_genome_sequenced", "event_distantrecurrence", "event_regionalrecurrence", "event_localrecurrence", "case_project_glss"
+, "case_project_tcga", "tissue_source_", "histology", "histological", "grade", "stage", "classification", "group", "risk", "followup", "country", "treatment", "status", "cancer", "type", 
+"response", "outcome", "rna", "genome", "subgroup", "patient:ch1_")
+
 lapply(methods, function(method) {
   if (!file.exists(file.path(savePath, method))) {
     dir.create(file.path(savePath, method))
@@ -33,6 +38,19 @@ lapply(methods, function(method) {
 
     rds <- readRDS(file.path(datPath, method, paste0(file, ".rds")))
     clin <- rds$clinical
+
+    ### remove some vars
+
+    colnames(clin) <- tolower(colnames(clin))
+    allvars <- colnames(clin)
+    rmvars <- lapply(rmpatterns, function(pattern){
+        rmvar <- allvars[grep(pattern, allvars)]
+    }) %>% do.call(what = c) %>% unique()
+
+    allvars <- setdiff(allvars, rmvars)
+    clin <- clin[, allvars, drop=F]
+
+    ###
 
     surv <- rds$surv
 

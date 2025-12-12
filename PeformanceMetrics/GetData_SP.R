@@ -2,13 +2,15 @@ library(tidyverse)
 library(parallel)
 
 subPath <- "./Subtyping_Results"
-datPath <- "./Data/CSIE_Main"
+datPath <- "../Data/CSIE_Main"
 savePath <- "./SubSurvClin"
 
 datasets <- list.files(datPath)
 datasets <- strsplit(datasets, ".rds")
 datasets <- lapply(datasets, function(elm) { elm[1] }) %>% unlist()
-datasets <- setdiff(datasets, c("P23918603", "P38007532"))
+
+### remove datasets with no suitable clinical variables
+datasets <- setdiff(datasets, c("P23918603", "GSE62452", "GSE74187", "GSE78229", "GSE85916", "GSE57495", "GSE21501", "GSE72951"))
 
 methods <- c("Baseline", "CSIE", "CC", "CIMLR", "SNF", "LRACluster", "IntNMF", "ANF", "NEMO", "MRGCN", "hMKL", "MDICC", "DLSF", "DSIR")
              

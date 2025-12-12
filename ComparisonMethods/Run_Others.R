@@ -5,9 +5,9 @@ library(mltools)
 library(survminer)
 library(metap)
 
-dataPath <- "./Data/Others_Main"
-ptoPath <- "./Data/Others_Relevant"
-resPath <- "./Subtyping_Results/"
+dataPath <- "../Data/Others_Main"
+ptoPath <- "../Data/Others_Relevant"
+resPath <- "../PerformanceMetrics/Subtyping_Results/"
 
 datasets <- list.files(dataPath)
 datasets <- strsplit(datasets, ".rds")
