@@ -7,8 +7,11 @@ import os
 predictor = Predictor('./checkpoints/best_model.pt')
 
 # datPath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TestDataGene/DG2_2'
-datPath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/NotTCGA_csv'
-savePath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TestDataGene/DG4_1'
+datPath = '../Data/CSIE_Inference/GEO_single'
+savePath = '../Data/CSIE_Inference/GEO_imputed'
+
+if os.path.exists(savePath) == False:
+    os.makedirs(savePath)
 
 def list_subfolders_pathlib(parent_folder):
     """Lists only the immediate subfolders in a directory using pathlib."""

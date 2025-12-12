@@ -12,8 +12,8 @@ import json
 @dataclass
 class DataConfig:
     """Data loading and preprocessing configuration."""
-    data_root: str = "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TCGA_csv"
-    pathway_file: str = "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/NewKEGGgs.json"
+    data_root: str = "../Data/TCGA_csv"
+    pathway_file: str = "../Data/CSIE_Relevant/NewKEGGgs.json"
     min_samples_per_cancer: int = 10
     val_size: float = 0.2  # Updated from 0.15
     batch_size: int = 32

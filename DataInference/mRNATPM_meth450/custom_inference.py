@@ -7,8 +7,8 @@ import numpy as np
 predictor = Predictor('./checkpoints/best_model.pt')
 
 # datPath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TestDataGene/DG2_2'
-datPath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/NotTCGA_csv'
-savePath = '/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TestDataGene/DG4_1'
+datPath = '../Data/CSIE_Inference/GEO_single'
+savePath = '../Data/CSIE_Inference/GEO_imputed'
 
 if os.path.exists(savePath) == False:
     os.makedirs(savePath)

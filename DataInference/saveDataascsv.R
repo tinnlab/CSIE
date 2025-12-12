@@ -3,11 +3,15 @@ library(parallel)
 library(matrixStats)
 library(jsonlite)
 
-# datPath <- "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/DSCC_Main"
-datPath <- "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/DataMap_Main"
+datPath <- "../Data/CSIE_Main"
 # savePath <- "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TCGA_csv"
-savePath <- "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/TCGA_csv_allgenes"
-dataTypes <- c("mRNAUnstranded", "mRNATPM", "mRNAFPKM", "mRNAFPKMuq", "miRNA", "miRNAiso", "meth450", "cnv")
+savePath <- "../Data/TCGA_csv"
+
+if(!file.exists(file.path(savePath))){
+    dir.create(file.path(savePath))
+}
+
+dataTypes <- c("mRNATPM", "miRNA", "miRNAiso", "meth450")
 
 allFiles <- list.files(datPath)
 allFiles <- gsub(".rds", "", allFiles)
@@ -27,7 +31,7 @@ mclapply(allFiles, mc.cores=8, function(file){
 })
 
 ### save the kegg pathway genes as csv
-keggGeneSet <- readRDS("/data/daotran/Cancer_Subtyping/data_old/KEGGPathways.rds")
+keggGeneSet <- readRDS("../Data/CSIE_Relevant/KEGGPathways.rds")
 keggGeneSet <- lapply(names(keggGeneSet), function(name){
   gs <- keggGeneSet[[name]]
   gs[gs == ""] <- NA
@@ -40,4 +44,4 @@ keggGeneSet <- lapply(names(keggGeneSet), function(name){
 # genecount <- genecount[genecount >= 20]
 # genecount <- genecount[genecount <= 300 & genecount >= 100]
 # write_json(keggGeneSet[names(genecount)], "/nfs/blanche/share/daotran/Subtyping/data-analysis/NewKEGGgs.json", pretty = TRUE)
-write_json(keggGeneSet, "/data/daotran/Cancer_Subtyping/BiB_Submission/Data/NewKEGGgs.json", pretty = TRUE)
+write_json(keggGeneSet, "../Data/CSIE_Relevant/NewKEGGgs.json", pretty = TRUE)
