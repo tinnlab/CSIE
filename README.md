@@ -7,7 +7,10 @@ Please follow the below instructions:
 
 ### Core Requirements (CSIE only)
 
-To run CSIE you need an R-installed environment with the following packages. **Note:** The specified versions are required if you want to reproduce results of DSCC reported in the paper.
+CSIE includes two different modules: Data Inference and Ensemble Clustering. 
+To run the Data Inference module, you need a Python-installed environment. Please create a conda environment using the provided yaml file.
+
+To run the Ensemble Clustering module you need an R-installed environment the following packages. **Note:** The specified versions are required if you want to reproduce results of CSIE reported in the paper.
 
 | Package | Version |
 |---------|---------|
@@ -20,9 +23,11 @@ To run CSIE you need an R-installed environment with the following packages. **N
 | cluster | 2.1.8 |
 | RhpcBLASctl | latest |
 
+
+
 ### Additional Requirements (Comparison methods)
 
-To run 13 comparison methods you need to install additional packages to the R environment. You also need a Python environment (we used python=3.11) with several packages. If you're using conda, you can directly install Python packages to the environment with R.
+To run 13 comparison methods you need to install additional packages to the R environment. Some of the comparison methods are designed in Python, so you need to use the previously created Python environment to run them. 
 
 #### R packages
 
@@ -54,23 +59,11 @@ To run 13 comparison methods you need to install additional packages to the R en
 - SIMLR
 
 **From GitHub:**
-- MOVICS (`xlucpu/MOVICS`)
 - CIMLR (`danro9685/CIMLR`)
 - NNLM (`linxihui/NNLM`)
 - NEMO (`Shamir-Lab/NEMO/NEMO`)
 - LRACluster (`Zaoqu-Liu/LRAcluster`)
 
-#### Python packages
-
-Install using pip or conda:
-- numpy
-- pandas
-- lifelines
-- pycox
-- scikit-survival
-- torch
-- matplotlib
-- scikit-learn
    
 ## 2. Setup
 ```bash
