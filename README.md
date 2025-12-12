@@ -1,6 +1,6 @@
 # CSIE
 
-This repo contains the source code and scripts for reproducing the results reported in our paper "CSIE: Cancer Subtyping via Inference and Ensemble"
+This repo contains the source code and scripts for reproducing the results reported in our paper "CSIE: Cancer Subtyping via Inference and Ensemble".
 Please follow the below instructions:
 
 ## 1. Requirements
