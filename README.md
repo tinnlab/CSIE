@@ -84,7 +84,7 @@ cd /Data
 
 # Download processed data
 # Download data for CSIE
-wget "   " -O CSIE_Main.zip
+wget "https://seafile.tinnguyen-lab.com/f/ed00eb6f46f243c08198/?dl=1" -O CSIE_Main.zip
 wget "https://seafile.tinnguyen-lab.com/f/f0b1f5ce16634e758a87/?dl=1" -O CSIE_Relevant.zip
 
 # Download data for comparison methods
@@ -132,7 +132,7 @@ python custom_inference.py ## this script is for inferring the target omics usin
 
 We also uploaded the checkpoints of training the models in case you don't want to train the models from scratch. you can download the checkpoints via: 
 ```bash
-wget "  " -O AllCheckpoints.zip
+wget "https://seafile.tinnguyen-lab.com/f/8e9e5bd9c41d459d9fa8/?dl=1" -O AllCheckpoints.zip
 ```
 After unzipping the downloaded file, please copy the corresponding checkpoint folder to the folder of each model. Then you just need to run the custom_inference.py script for data inference.
 
