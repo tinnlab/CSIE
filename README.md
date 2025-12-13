@@ -99,8 +99,8 @@ wget "https://seafile.tinnguyen-lab.com/f/5f1d638d32a641d08e56/?dl=1" -O Others_
 Please note that the CSIE_Main folder includes all datasets analyzed in this study, even the datasets with imputed omics types. Therefore, you can directly run the Ensemble Clustering module with these datasets to reproduce reported results of CSIE. However, we also provide you with guidances ro run the Data Inference so that you would understand more about the pipeline of this module.
 
 
-# Run the Data Inference module of CSIE
-# This module includes three autoencoders which are used for imputing three different data matrices: miRNArpm, miRNAiso, and DNA methylation.
+### Run the Data Inference module of CSIE
+#### This module includes three autoencoders which are used for imputing three different data matrices: miRNArpm, miRNAiso, and DNA methylation.
 
 ```bash
 wget "https://seafile.tinnguyen-lab.com/f/60ffdf2c5d4e4235acca/?dl=1" -O CSIE_Inference.zip
@@ -130,21 +130,21 @@ python run.py --quick ## this script is for training the model
 python custom_inference.py ## this script is for inferring the target omics using the trained model
 ```
 
-# We also uploaded the checkpoints of training the models in case you don't want to train the models from scratch. you can download the checkpoints via: 
+#### We also uploaded the checkpoints of training the models in case you don't want to train the models from scratch. you can download the checkpoints via: 
 ```bash
 wget "  " -O AllCheckpoints.zip
 ```
-# After unzipping the downloaded file, please copy the corresponding checkpoint folder to the folder of each model. Then you just need to run the custom_inference.py script for data inference.
+#### After unzipping the downloaded file, please copy the corresponding checkpoint folder to the folder of each model. Then you just need to run the custom_inference.py script for data inference.
 
 
-# Run the Ensemble Clustering module of CSIE
+### Run the Ensemble Clustering module of CSIE
 
 ```bash
 cd CSIE/EnsembleClustering
 Rscript Run_CSIE.R --no-save
 ```
 
-# Run Comparison methods
+### Run Comparison methods
 ```bash
 cd CSIE/ComparisonMethods
 Rscript Run_Others.R --no-save
