@@ -100,7 +100,7 @@ Please note that the CSIE_Main folder includes all datasets analyzed in this stu
 
 
 ### Run the Data Inference module of CSIE
-#### This module includes three autoencoders which are used for imputing three different data matrices: miRNArpm, miRNAiso, and DNA methylation.
+This module includes three autoencoders which are used for imputing three different data matrices: miRNArpm, miRNAiso, and DNA methylation.
 
 ```bash
 wget "https://seafile.tinnguyen-lab.com/f/60ffdf2c5d4e4235acca/?dl=1" -O CSIE_Inference.zip
@@ -130,11 +130,11 @@ python run.py --quick ## this script is for training the model
 python custom_inference.py ## this script is for inferring the target omics using the trained model
 ```
 
-#### We also uploaded the checkpoints of training the models in case you don't want to train the models from scratch. you can download the checkpoints via: 
+We also uploaded the checkpoints of training the models in case you don't want to train the models from scratch. you can download the checkpoints via: 
 ```bash
 wget "  " -O AllCheckpoints.zip
 ```
-#### After unzipping the downloaded file, please copy the corresponding checkpoint folder to the folder of each model. Then you just need to run the custom_inference.py script for data inference.
+After unzipping the downloaded file, please copy the corresponding checkpoint folder to the folder of each model. Then you just need to run the custom_inference.py script for data inference.
 
 
 ### Run the Ensemble Clustering module of CSIE
