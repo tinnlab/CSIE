@@ -212,6 +212,15 @@ aasc_eigengap <- function(w, num_clusters = 10) {
 
     # Normalize weights to sum to 1
     weight <- weight / sum(weight)
+
+    ### check if there is negative
+    w_n_flat <- w_reshaped %*% weight
+    # Reshape back to original dimensions
+    w_n <- matrix(w_n_flat, nrow = s1, ncol = s2)
+
+    if(sum(w_n < 0) > 0){
+      break
+    }
   }
 
   # Return the weights that gave the best result
