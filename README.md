@@ -88,7 +88,7 @@ wget "https://seafile.tinnguyen-lab.com/f/ed00eb6f46f243c08198/?dl=1" -O CSIE_Ma
 wget "https://seafile.tinnguyen-lab.com/f/f0b1f5ce16634e758a87/?dl=1" -O CSIE_Relevant.zip
 
 # Download data for comparison methods
-wget "   " -O Others_Main.zip
+wget "https://seafile.tinnguyen-lab.com/f/387dd8ee93b344d59056/?dl=1" -O Others_Main.zip
 wget "https://seafile.tinnguyen-lab.com/f/5f1d638d32a641d08e56/?dl=1" -O Others_Relevant.zip
 
 # unzip the downloaded files
