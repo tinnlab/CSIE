@@ -319,8 +319,8 @@ filterGenesUsingGeneList <- function(M, geneList, delimeter) {
 
 runCSIE <- function(dataList, nSamples, defk = 10) {
 
-  dataList <- lapply(names(dataList), function(dataType) {
-    data <- dataList[[dataType]]
+  dataList <- lapply(1:length(dataList), function(i) {
+    data <- dataList[[i]]
 
     data <- as.data.frame(data) %>% t() %>% unique() %>% t()
     filteredDat <- data[, colVars(data) > 0, drop = FALSE]
